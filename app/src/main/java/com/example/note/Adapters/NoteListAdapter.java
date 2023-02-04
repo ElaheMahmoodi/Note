@@ -1,6 +1,7 @@
 package com.example.note.Adapters;
 
 import android.content.Context;
+import android.location.GnssAntennaInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +18,7 @@ import com.example.note.R;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class NoteListAdapter extends RecyclerView.Adapter<NotesViewHolder>{
     Context context;
@@ -52,11 +54,41 @@ public class NoteListAdapter extends RecyclerView.Adapter<NotesViewHolder>{
         }else{
             holder.imageView_pin.setImageResource(0);
         }
+
+        int color_code = getRandomColor();
+        holder.notes_container.setCardBackgroundColor(holder.itemView.getResources().getColor(color_code , null));
+
+        holder.notes_container.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                listener.onClick(list.get(holder.getAdapterPosition()));
+            }
+        });
+
+        holder.notes_container.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                listener.onLongClick(list.get(holder.getAdapterPosition()), holder.notes_container);
+                return true;
+            }
+        });
     }
 
 
     private int getRandomColor(){
         List<Integer> colorCode = new ArrayList<>();
+        colorCode.add(R.color.color1);
+        colorCode.add(R.color.color2);
+        colorCode.add(R.color.color3);
+        colorCode.add(R.color.color4);
+        colorCode.add(R.color.color5);
+
+        Random random = new Random();
+        int random_color = random.nextInt(colorCode.size());
+        return random_color;
+
+
+
     }
 
 
