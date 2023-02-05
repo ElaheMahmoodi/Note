@@ -40,6 +40,8 @@ public class MainActivity extends AppCompatActivity {
         recyclerView = findViewById(R.id.recycler_home);
         fab_add = findViewById(R.id.fab_add);
 
+        searchView_home = findViewById(R.id.searchView_home);
+
         database = RoomDB.getInstance(this);
         notes = database.mainDAO().getAll();
 
@@ -64,9 +66,10 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public boolean onQueryTextChange(String newText) {
                 filter(newText);
-                return false;
+                return true;
             }
         });
+
     }
 
     private void filter(String newText) {
