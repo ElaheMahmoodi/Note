@@ -31,7 +31,6 @@ public class NoteListAdapter extends RecyclerView.Adapter<NotesViewHolder>{
         this.listener = listener;
     }
 
-
     @NonNull
     @Override
     public NotesViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -73,8 +72,6 @@ public class NoteListAdapter extends RecyclerView.Adapter<NotesViewHolder>{
             }
         });
     }
-
-
     private int getRandomColor(){
         List<Integer> colorCode = new ArrayList<>();
         colorCode.add(R.color.color1);
@@ -85,20 +82,14 @@ public class NoteListAdapter extends RecyclerView.Adapter<NotesViewHolder>{
 
         Random random = new Random();
         int random_color = random.nextInt(colorCode.size());
-        return random_color;
-
-
-
+        return colorCode.get(random_color);
     }
-
-
     @Override
     public int getItemCount() {
         return list.size();
     }
 }
 class NotesViewHolder extends RecyclerView.ViewHolder{
-
     CardView notes_container;
     TextView textView_title,textView_notes,textView_date;
     ImageView imageView_pin;
