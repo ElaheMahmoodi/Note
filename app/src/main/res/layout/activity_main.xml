@@ -8,8 +8,19 @@
     android:background="@color/black"
     tools:context=".MainActivity">
 
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchView_home"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_alignParentTop="true"
+        app:iconifiedByDefault="false"
+        android:layout_margin="16dp"
+        android:background="@color/gray"
+        app:queryHint="Search your note ..." />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_home"
+        android:layout_below="@+id/searchView_home"
         android:layout_margin="8dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
