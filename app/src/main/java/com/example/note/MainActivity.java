@@ -160,6 +160,12 @@ public class MainActivity extends AppCompatActivity implements PopupMenu.OnMenuI
                 noteListAdapter.notifyDataSetChanged();
                 return true;
 
+            case R.id.delete:
+                database.mainDAO().delete(selectedNotes);
+                notes.remove(selectedNotes);
+                noteListAdapter.notifyDataSetChanged();
+                Toast.makeText(MainActivity.this, "Note deleted 🧺", Toast.LENGTH_SHORT).show();
+                return true;
 
             default:
                 return false;
