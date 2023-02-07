@@ -5,17 +5,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
     tools:context=".MainActivity">
 
     <androidx.appcompat.widget.SearchView
+        android:background="#92DDEA"
         android:id="@+id/searchView_home"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         android:layout_alignParentTop="true"
         app:iconifiedByDefault="false"
         android:layout_margin="16dp"
-        android:background="@color/gray"
         app:queryHint="Search your note ..." />
 
     <androidx.recyclerview.widget.RecyclerView
@@ -29,6 +28,8 @@
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add"
         android:layout_margin="24dp"
+
+        android:backgroundTint="#92DDEA"
         android:src="@drawable/icon_add"
         android:layout_alignParentBottom="true"
         android:layout_alignParentEnd="true"

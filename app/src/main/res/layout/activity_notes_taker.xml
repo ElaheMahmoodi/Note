@@ -5,46 +5,60 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/black"
-    tools:context=".NotesTakerActivity">
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_notes"
+    tools:context=".NotesTakerActivity"
+    android:layout_margin="30dp">
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-            <ImageView
-                android:id="@+id/imageView_save"
-                android:layout_alignParentEnd="true"
-                android:src="@drawable/icon_save"
-                android:padding="8dp"
-                android:background="@android:color/transparent"
-                android:layout_width="?attr/actionBarSize"
-                android:layout_height="?attr/actionBarSize"/>
-        </RelativeLayout>
-    </androidx.appcompat.widget.Toolbar>
-
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
     <EditText
         android:id="@+id/editText_title"
         android:hint="Title: "
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:padding="8dp"
         android:textStyle="bold"
-        android:textSize="20sp"
-        android:textColor="@color/white"
+        android:background="@drawable/shape_two"
+        android:textSize="30sp"
+        android:fontFamily="@font/bubble"
+        android:textColor="@color/black"
         android:singleLine="true"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
     <EditText
         android:id="@+id/editText_notes"
         android:hint="Add notes: "
-        android:textColorHint="@color/white"
+        android:textColorHint="@color/black"
         android:padding="8dp"
-        android:textColor="@color/white"
-        android:textSize="18sp"
+        android:maxLines="4"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/shape_two"
+        android:textColor="@color/black"
+        android:textSize="20sp"
         android:textStyle="normal"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"/>
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="380dp"
+        android:layout_margin="30dp"
+        android:layout_gravity="center_vertical"
+        android:src="@drawable/notebg"/>
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/imageView_save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="5dp"
+            android:background="@drawable/shape"
+            android:padding="10dp"
+            android:src="@drawable/icon_save" />
+    </RelativeLayout>
+    </LinearLayout>
 </LinearLayout>
